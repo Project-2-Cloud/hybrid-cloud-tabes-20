@@ -20,15 +20,15 @@
                     <table class="table">
                         <tbody>
                             <tr v-for="(item,idx) in inCart" :key="idx">
-                                <td>{{ item.title }}</td>
-                                <td>${{ item.price }}</td>
+                                <td>{{ item.firstName }} {{ item.lastName }}</td>
+                                <td>${{ item.pricePerHour }}/h</td>
                                 <td>
                                     <button class="btn btn-sm btn-danger" @click="removeFromCart(item)">&times;</button>
                                 </td>
                             </tr>
                             <tr>
                                 <th></th>
-                                <th>${{ total }}</th>
+                                <th>€{{ total }}</th>
                                 <th></th>
                             </tr>
                         </tbody>
@@ -54,7 +54,7 @@ export default {
       return this.inCart.length; 
     },
     total() {
-      return this.inCart.reduce((acc, cur) => acc + cur.price, 0);
+      return this.inCart.reduce((acc, cur) => acc + cur.pricePerHour, 0);
     },
     isAuthenticated() {
       return this.$store.state.user.isAuthenticated;

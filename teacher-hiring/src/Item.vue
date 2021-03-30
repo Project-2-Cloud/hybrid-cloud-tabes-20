@@ -10,7 +10,7 @@
       <p class="card-text">{{ item.description | shortDescription }}</p>
       <p class="card-text">{{ item.courseSubjects | shortDescription }}</p>
       <div class="row">
-        <p class="col-6 lead">€{{ item.pricePerHour }}</p>
+        <p class="col-6 lead">€{{ item.pricePerHour }}/h</p>
         <p class="col-6">
           <button class="btn btn-success" :disabled="item.quantity === 0" @click="addToCart(item)">
             Hire teacher
@@ -56,8 +56,8 @@ export default {
 }
 
 .grow {
-  width: 90%;
-  height: 90%;
+  width: 290px;
+  height: 250px;
   padding: 15px;
   transition: all .2s ease-in-out;
 }
