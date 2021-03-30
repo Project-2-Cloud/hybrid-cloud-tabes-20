@@ -11,8 +11,6 @@ public class TeacherController {
     @Autowired
     private TeacherService teacherService;
 
-
-
     @RequestMapping("/teachers")
     public List<Teacher> getAllTeachers() {
         return teacherService.getAllTeachers();

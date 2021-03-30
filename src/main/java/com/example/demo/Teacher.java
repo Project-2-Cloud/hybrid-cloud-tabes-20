@@ -5,11 +5,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Table(name = "teachers")
 public class Teacher {
 
     @Id
-    private String id;
-
+    private int id;
     private String firstName, lastName;
     private int age;
     private String description;
@@ -22,7 +22,7 @@ public class Teacher {
 
     }
 
-    public Teacher(String id, String firstName, String lastName, int age, String description, String image_url, float pricePerHour) {
+    public Teacher(int id, String firstName, String lastName, int age, String description, String image_url, float pricePerHour) {
         super();
         this.id = id;
         this.firstName = firstName;
@@ -34,11 +34,11 @@ public class Teacher {
         this.pricePerHour = pricePerHour;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
