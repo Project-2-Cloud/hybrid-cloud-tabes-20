@@ -11,7 +11,7 @@ public class TeacherController {
     @Autowired
     private TeacherService teacherService;
 
-    
+
 
     @RequestMapping("/teachers")
     public List<Teacher> getAllTeachers() {
@@ -30,7 +30,7 @@ public class TeacherController {
 
     @RequestMapping(method = RequestMethod.PUT, value = "/teachers/{id}")
     public void updateTeacher(@RequestBody Teacher teacher, @PathVariable String id) {
-        teacherService.updateTeacher(id, teacher);
+        teacherService.updateTeacher(teacher);
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value = "/teachers/{id}")
