@@ -1,14 +1,19 @@
 package com.example.demo;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
 public class Teacher {
 
+    @Id
     private String id;
+
     private String firstName, lastName;
     private int age;
     private String description;
+    @ElementCollection
     private List<String> courseSubjects;
     private String image_url;
     private float pricePerHour;

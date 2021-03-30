@@ -1,0 +1,5 @@
+com\example\demo\TeacherApplication.class
+com\example\demo\TeacherRepository.class
+com\example\demo\TeacherService.class
+com\example\demo\TeacherController.class
+com\example\demo\Teacher.class

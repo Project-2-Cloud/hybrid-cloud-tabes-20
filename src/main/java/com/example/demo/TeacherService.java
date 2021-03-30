@@ -4,14 +4,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TeacherService {
 
-    /*@Autowired
-    private TeacherRepository teacherRepository;*/
+    @Autowired
+    private TeacherRepository teacherRepository;
+
     private List<Teacher> teachers = new ArrayList<>();
 
     public void TeacherService() {
@@ -62,36 +63,18 @@ public class TeacherService {
     }
 
     public Teacher getTeacher(String id) {
-        for(Teacher t : teachers)
-        {
-            if(t.getId().equals(id)){
-                return t;
-            }
-        }
-        throw new IllegalArgumentException("de ID "+id+" is onbestaand");
+        return teacherRepository.findById(id).orElse(null);
     }
 
     public void addTeacher(Teacher teacher) {
-        teachers.add(teacher);
+        teacherRepository.save(teacher);
     }
-    public void updateTeacher(String id, Teacher teacher)
+    public void updateTeacher(Teacher teacher)
     {
-        for(int i=0; i<teachers.size(); i++)
-        {
-            if(teachers.get(i).getId().equals(id))
-            {
-                teachers.set(i,teacher);
-            }
-        }
+       teacherRepository.save(teacher);
     }
     public void deleteTeacher(String id)
     {
-        for(int i=0; i<teachers.size(); i++)
-        {
-            if(teachers.get(i).getId().equals(id))
-            {
-                teachers.remove(i);
-            }
-        }
+        teacherRepository.deleteById(id);
     }
 }
