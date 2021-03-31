@@ -11,15 +11,13 @@ public class TeacherController {
     @Autowired
     private TeacherService teacherService;
 
-
-
     @RequestMapping("/teachers")
     public List<Teacher> getAllTeachers() {
         return teacherService.getAllTeachers();
     }
 
     @RequestMapping("/teachers/{id}")
-    public Teacher getTeacher(@PathVariable String id){
+    public Teacher getTeacher(@PathVariable int id){
         return teacherService.getTeacher(id);
     }
 
@@ -34,7 +32,7 @@ public class TeacherController {
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value = "/teachers/{id}")
-    public void deleteTeacher(@PathVariable String id) {
+    public void deleteTeacher(@PathVariable int id) {
         teacherService.deleteTeacher(id);
     }
 
