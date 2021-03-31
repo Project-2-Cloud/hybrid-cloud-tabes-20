@@ -19,8 +19,8 @@ public class TeacherService {
         return teachers;
     }
 
-    public Teacher getTeacher(String id) {
-        return teacherRepository.findById(id).orElse(null);
+    public Teacher getTeacher(int id) {
+        return teacherRepository.findTeacherById(id);
     }
 
     public void addTeacher(Teacher teacher) {
@@ -32,9 +32,9 @@ public class TeacherService {
        teacherRepository.save(teacher);
     }
 
-    public void deleteTeacher(String id)
+    public void deleteTeacher(int id)
     {
-        teacherRepository.deleteById(id);
+        teacherRepository.deleteTeacherById(id);
     }
 
 }

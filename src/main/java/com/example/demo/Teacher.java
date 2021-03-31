@@ -1,8 +1,6 @@
 package com.example.demo;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name = "teachers")
@@ -13,8 +11,7 @@ public class Teacher {
     private String firstName, lastName;
     private int age;
     private String description;
-    @ElementCollection
-    private List<String> courseSubjects;
+    private String courses;
     private String image_url;
     private float pricePerHour;
 
@@ -22,13 +19,13 @@ public class Teacher {
 
     }
 
-    public Teacher(int id, String firstName, String lastName, int age, String description, String image_url, float pricePerHour) {
+    public Teacher(int id, String firstName, String lastName, int age, String courses, String description, String image_url, float pricePerHour) {
         super();
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
-        this.courseSubjects =  new ArrayList<>();
+        this.courses = courses;
         this.description = description;
         this.image_url = image_url;
         this.pricePerHour = pricePerHour;
@@ -74,12 +71,12 @@ public class Teacher {
         this.description = description;
     }
 
-    public List<String> getCourseSubjects() {
-        return courseSubjects;
+    public String getCourses() {
+        return courses;
     }
 
-    public void addCourseSubject(String courseSubject) {
-        courseSubjects.add(courseSubject);
+    public void setCourses(String courses) {
+        this.courses = courses;
     }
 
     public String getImage_url() {
