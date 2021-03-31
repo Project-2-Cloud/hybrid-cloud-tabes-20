@@ -60,6 +60,7 @@ export default {
   height: 250px;
   padding: 15px;
   transition: all .2s ease-in-out;
+  object-fit: cover;
 }
 
 .grow:hover {

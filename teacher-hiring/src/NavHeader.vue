@@ -1,7 +1,8 @@
 <template>
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark" role="navigation">
   <div class="container">
-    <router-link to="/" class="navbar-brand mr-auto">Teacher hiring</router-link>
+    <router-link to="/" class="navbar-brand mr-auto">Home</router-link>
+    <router-link to="/teachers" class="navbar-brand mr-auto">Teachers</router-link>
       <ul class="navbar-nav mr-auto">
       </ul>
       <ul class="nav navbar-nav">
